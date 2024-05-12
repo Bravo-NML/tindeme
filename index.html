@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru_RU">
+  <head>
+
+    <meta charset=utf-8>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+    <title>Аниме-тиндер</title>
+  </head>
+  <body>
+    <h1>Аниме тиндер</h1>
+    <h2 id="name">Имя</h2>
+    <button onclick="doSmth()">Дай имя</button>
+  </body>
+  <script>
+      function doSmth() {
+        fetch('http://127.0.0.1:5000/get_name/',{
+          method: 'GET'
+        })
+          .then(r => r.json()).then( response => {
+              console.log(response)
+          })
+      }
+  </script>
+</html>
