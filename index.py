@@ -25,14 +25,7 @@ def getNames():
 
             if match:
                 name = match.group(0)
-                # img = match2.group(0)
-                class char:
-                    id = 0
-                
-                char["name"] = name
-
-                print(char)
-                names.append(char)
+                names.append(name)
             
             if len(names) == 10:
                 break
