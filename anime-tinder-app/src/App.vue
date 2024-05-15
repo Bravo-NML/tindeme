@@ -1,9 +1,10 @@
 <template>
-  <nav class="navigation">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <NavigationGlobal/>
   <router-view/>
 </template>
 
-<style lang="scas" src="@/assets/styles/base.sass"></style>
+<style lang="sass" src="@/assets/styles/base.sass"></style>
+
+<script lang="ts" setup>
+import NavigationGlobal from './components/NavigationGlobal.vue';
+</script>
