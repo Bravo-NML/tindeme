@@ -1,0 +1,106 @@
+@import 'variables.sass'
+  
+* 
+  -webkit-text-size-adjust: none
+  text-size-adjust: none
+  margin: 0
+  box-sizing: border-box
+  background-position: center
+  background-size: contain
+  background-repeat: no-repeat
+  box-sizing: border-box
+  position: relative
+  transition: all 0.1s linear
+  -webkit-tap-highlight-color: transparent
+
+@font-face
+    font-family: "Unbounded"
+    src: url('../fonts/Unbounded-Bold.ttf')
+    font-style: normal
+    font-display: auto
+    font-weight: 700
+
+
+@font-face
+    font-family: "Unbounded"
+    src: url('../fonts/Unbounded-ExtraBold.ttf')
+    font-style: normal
+    font-display: auto
+    font-weight: 800
+
+
+@font-face
+    font-family: "Unbounded"
+    src: url('../fonts/Unbounded-Regular.ttf')
+    font-style: normal
+    font-display: auto
+    font-weight: 400
+
+
+@font-face
+    font-family: "Unbounded"
+    src: url('../fonts/Unbounded-Medium.ttf')
+    font-style: normal
+    font-display: auto
+    font-weight: 500
+
+  
+html
+  width: 100vw
+  height: 100vh
+  height: calc(var(--vh, 1vh) * 100)
+  margin: 0
+  padding: 0
+  overflow: hidden
+
+body
+  font-family: "Unbounded"
+  line-height: 130%
+  overflow: hidden
+  width: 100%
+  height: 100%
+  margin: 0
+  padding: 0
+  display: flex
+  font-size: clamp(14px, 1.2vw, 25px)
+  line-height: 120%
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  background-position: center
+  background-size: auto
+  background-repeat: repeat
+
+#app 
+  margin: 0 auto
+  height: 100%
+  width: 100%
+  display: flex
+  flex-direction: column
+  padding: 20px 50px 100px
+  align-items: center
+  justify-content: center
+  background-color: $background-main
+  
+.footer
+    width: 100%
+    position: fixed
+    padding: 25px 25px 50px
+    bottom: 0
+    display: flex
+    justify-content: space-around
+    background-color: $background-main
+  
+.page
+  width: 100%
+
+.navigation
+  position: fixed
+  top: 20px
+  color: $black-main
+
+  & a
+    text-decoration: none !important
+    color: $black-main !important
+
+@media (max-width: $media-phone)

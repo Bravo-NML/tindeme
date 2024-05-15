@@ -21,10 +21,18 @@ def getNames():
             properUrl = 'https://anime-characters-fight.fandom.com' + url
             responseName = requests.get(properUrl)
             match = re.search(r'(?<=Имя: )(\b\w+\b)\W+(\b\w+\b)', responseName.text)
+            match2 = re.search(r'(?<=class=\"noline\"><a href=\").*?(?=\")', responseName.text)
 
             if match:
                 name = match.group(0)
-                names.append(name)
+                # img = match2.group(0)
+                class char:
+                    id = 0
+                
+                char["name"] = name
+
+                print(char)
+                names.append(char)
             
             if len(names) == 10:
                 break
