@@ -1,8 +1,8 @@
 <template>
   <div class="buttons-block">
     <component
-      v-for="(button, id) in buttonsList"
-      :key="id"
+      v-for="(button, index) in buttonsList"
+      :key="index"
       :is="button.component"
       :props="button.props"
     />
@@ -15,13 +15,18 @@
 import { defineAsyncComponent, defineProps } from 'vue'
 
 const props = defineProps<{
-  buttonsReqired: object,
+  buttonsReqired: object[],
 }>()
 
-const buttonsList = Object.entries(props.buttonsReqired).map(item => {
+interface Button {
+  type: string,
+  props: object,
+}
+
+const buttonsList: object[] = props.buttonsReqired.map((item: Button) => {
   return {
-    props: item[1],
-    component: getComponentByName(item[0]),
+    props: item.props,
+    component: getComponentByName(item.type),
   }
 })
 

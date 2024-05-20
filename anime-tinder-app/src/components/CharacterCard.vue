@@ -1,6 +1,8 @@
 <template>
-  <div class="character-card" style="width: 300px; height: 450px">
+  <div class="character-card">
+  
     <h2>Каках Пердунович</h2>
+    <div class="cc-background"></div>
 
     <ButtonsBlock :buttonsReqired="reuqiredButtons"/>
   </div>
@@ -10,12 +12,21 @@
 import ButtonsBlock from './basics/ButtonsBlock.vue';
 
 interface Button {
-  [name: string]: object
+  type: string,
+  props: object,
 }
 
-const reuqiredButtons: Button = {
-  'choice': {
-    type: 'pos'
-  }
-}
+const reuqiredButtons: Button[] = [
+  {
+    type: 'choice',
+    props: {
+      mod: 'pos',
+    }
+  }, {
+    type: 'choice',
+    props: {
+      mod: 'neg',
+    }
+  },
+]
 </script>
