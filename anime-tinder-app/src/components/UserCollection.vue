@@ -7,7 +7,7 @@
     </span>
 
     <div class="user-collection_container" v-else>
-      <CollectionCard v-for="name in namesList" :key="name.name" :name="name.name"/>
+      <CollectionCard v-for="name in namesList" :key="name" :name="name"/>
     </div>
 
     <!-- <div class="user-collection_container">
@@ -25,14 +25,13 @@ import { onMounted, ref } from "vue"
 
 let status = ref<string>("loading...");
 
-const namesList = ref<object[]>([]);
+const namesList = ref<string[]>([]);
 
 onMounted(() => {
   requestUserCollection()
   .then(r => r.json())
   .then( response => {
-    const names: object[] = response.names
-    namesList.value.push(...names);
+    namesList.value.push(...response.names);
     status.value = "";
   }).catch((err) => {
     status.value = err;
