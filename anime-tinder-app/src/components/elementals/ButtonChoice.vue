@@ -1,6 +1,6 @@
 <template>
-  <button :class="`button-choice button-choice__${type}`">
-    {{ texts[type] }}
+  <button :class="`button-choice button-choice__${mod}`">
+    {{ texts[mod] }}
   </button>
 </template>
 
@@ -8,14 +8,14 @@
 import { defineProps, ref } from 'vue';
 
 interface Props {
-  type: string,
+  mod: string,
 }
 
 const props = defineProps<{
   props: Props,
 }>()
 
-const type = ref(props.props.type);
+const mod = ref(props.props.mod);
 
 interface Text {
   [name: string]: string
