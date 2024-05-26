@@ -1,5 +1,5 @@
 <template>
-  <div class="collection-card" :style="`background-color: ${backgroundColor};`">
+  <div class="collection-card">
     <p>{{ props.name }}</p>
   </div>
 </template>
@@ -11,7 +11,7 @@ const props =  defineProps({
   name: { type: String, required: true },
 })
 
-const backgroundColor: string = getRandomColor();
+// const backgroundColor: string = getRandomColor();
 
 function getRandomColor() {
   var letters = '0123456789ABCDEF';
