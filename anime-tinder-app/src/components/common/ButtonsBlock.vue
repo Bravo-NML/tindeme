@@ -9,8 +9,6 @@
   </div>
 </template>
 
-<style lang="sass" src="@/assets/styles/basics.sass"></style>
-
 <script lang="ts" setup>
 import { defineAsyncComponent, defineProps } from 'vue'
 
@@ -33,7 +31,19 @@ const buttonsList: object[] = props.buttonsReqired.map((item: Button) => {
 function getComponentByName(name: string) {
   const processedName = name.split('-').map((str: string) => str.charAt(0).toUpperCase() + str.slice(1));
 
-  return defineAsyncComponent(() => import(`@/components/elementals/Button${processedName}.vue`));
+  return defineAsyncComponent(() => import(`@/components/common/Button${processedName}.vue`));
 }
 
 </script>
+
+<style lang="sass" scoped>
+.buttons-block 
+  display: flex
+  width: 100%
+  gap: 20px 10px
+
+  &.mod__character-card 
+    width: 100%
+    position: absolute
+    bottom: 0
+</style>

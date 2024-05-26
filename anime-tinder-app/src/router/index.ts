@@ -13,9 +13,9 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import(/* webpackChunkName: "appPage" */ '../pages/AppPage.vue')
   },
   {
-    path: '/collection',
-    name: 'collection',
-    component: () => import(/* webpackChunkName: "appPage" */ '../pages/CollectionPage.vue')
+    path: '/colleciton',
+    name: 'colleciton',
+    component: () => import(/* webpackChunkName: "CollectionPage" */ '../pages/CollectionPage.vue')
   }
 ]
 

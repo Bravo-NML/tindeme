@@ -23,4 +23,28 @@ function getRandomColor() {
 }
 </script>
 
-<style lang="sass" src="@/assets/styles/basics.sass"></style>
+<style lang="sass" scoped>
+@import @/assets/styles/variables.sass
+
+.collection-card 
+  width: 150px
+  aspect-ratio: 3 / 4
+  padding: 10px 15px
+
+  flex-shrink: 0
+
+  text-align: center
+  box-shadow: inset 0px 0px 0px 5px $glass-black
+  border-radius: 15px
+  background-color: #ECB88A
+
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+  p 
+    max-width: 100%
+    overflow: hidden
+    text-overflow: ellipsis
+</style>
