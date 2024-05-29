@@ -2,7 +2,7 @@
 
 This appliciation is supposed to help people choose an anime to watch by linking or disliking anime-characters. <br/><br/><b>The project is still in progress and unready to be deployed.</b>
 
-<h3>Frontend stack:</h3>
+## Frontend stack:
 
 <div style="display: flex; flex-direction: row">
   <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
@@ -11,7 +11,7 @@ This appliciation is supposed to help people choose an anime to watch by linking
   <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white">
 </div>
 
-<h3>Backend stack:</h3>
+## Backend stack:
 
 <div style="display: flex; flex-direction: row">
   <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue">
