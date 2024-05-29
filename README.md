@@ -18,7 +18,3 @@ This appliciation is supposed to help people choose an anime to watch by linking
   
   <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white">
 </div>
-
-<hr/>
-
-<h3>Backend stack:</h3>
