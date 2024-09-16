@@ -1,4 +1,18 @@
-@import 'variables.sass'
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 120%;
+  margin: 0;
+}
+
+/* @import 'variables.sass'
   
 * 
   -webkit-text-size-adjust: none
@@ -147,4 +161,4 @@ body
     transform: scale(0)
     
 
-@media (max-width: $media-phone)
+@media (max-width: $media-phone) */

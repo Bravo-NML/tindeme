@@ -1,0 +1,265 @@
+.pageApp {
+  background-color: rgb(206, 225, 244);
+  justify-content: center;
+  padding-top: 0 !important;
+  min-height: max(600px, 100vh) !important;
+}
+
+.flipCard {
+  box-sizing: border-box;
+  background-color: transparent;
+  width: 375px;
+  height: 500px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  border-radius: 20px;
+}
+
+.flipCardLiked {
+  color: rgb(201, 49, 49);
+  background-color: rgba(182, 66, 66, 0.5);
+  font-size: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: opacity .2s linear;
+  opacity: 1;
+  font-family: system-ui;
+  z-index: 10;
+  border-radius: inherit;
+}
+
+.flipCardLikedHidden {
+  composes: flipCardLiked;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.flipCardLiked::before {
+  content: "♥";
+}
+
+.flipCardDisliked {
+  composes: flipCardLiked;
+  color: black;
+  background-color: rgb(0, 0, 0, .5);
+}
+
+.flipCardDisliked::before {
+  content: "✖";
+}
+
+.flipCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flipCardInnerFlipped{
+  composes: flipCardInner;
+  transform: rotateY(180deg);
+}
+
+.flipCardInnerFlipped .flipCardFront {
+  pointer-events: none;
+}
+
+
+.flipCardFront, .flipCardBack {
+  position: absolute;
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 5px solid black;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.flipCardFront {
+  background-color: #bbb;
+  color: black;
+}
+
+.flipCardFront::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  opacity: .1;
+  z-index: 5;
+}
+
+.flipCardBack {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.characterImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+.buttonsAppContainer {
+  position: absolute;
+  left: 0;
+  bottom: 25px;
+  min-width: 100%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.buttonApp {
+  width: 60px;
+  height: 60px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all linear .1s;
+  bottom: 20px;
+  border-radius: 60px;
+  background-color: rgba(0, 0, 0, .7);
+  border: 2px solid white;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.buttonApp:hover {
+  box-shadow: inset 0 0 5px black;
+  /* width: 200px; */
+}
+
+.buttonAppPos {
+  composes: buttonApp;
+  /* border-radius: 0 40px 40px 0; */
+}
+
+.buttonAppPos:hover {
+  background-color: rgba(63, 190, 63, .7);
+}
+
+.buttonAppNeg {
+  composes: buttonApp;
+  /* border-radius: 40px 0 0 40px; */
+}
+
+.buttonAppNeg:hover {
+  background-color: rgba(208, 44, 44, .7);
+}
+
+.buttonAppMayby {
+  composes: buttonApp;
+  height: 60px;
+  width: 170px;
+  border-radius: 15px;
+}
+
+.buttonAppMayby:hover {
+  background-color: rgba(84, 227, 255, 0.7);
+}
+
+.flipCardBack .characterImage {
+  transform: rotateY(180deg);
+  border-radius: 100%;
+  position: relative;
+}
+
+.mainCharInfo {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.mainCharInfo h2 {
+  margin-bottom: 10px;
+}
+
+.flipCardBack p {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.animeList {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior: contain;
+}
+
+.animeItem {
+  min-width: 140px;
+  height: 80px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.animeImage {
+  object-fit: cover;
+}
+
+.animeImagePLaceholder {
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+}
+
+.animeName {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: rgba(0, 0, 0, .5);
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  font-size: 12px;
+}
+
+.backToPhoto {
+  position: relative;
+  cursor: pointer;
+}
+
+.backToPhotoArrow {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .5);
+  font-size: 30px;
+  opacity: 0;
+  transition: opacity .1s linear;
+  position: absolute;
+  top: 0;
+}
+
+.backToPhoto:hover .backToPhotoArrow {
+  opacity: 1;
+}
