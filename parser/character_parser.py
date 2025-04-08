@@ -46,7 +46,7 @@ class Character:
 
     # Fetch the character's description
     def description(self):
-        return self.soup.find('div', class_='character__desc').getText().strip().removeprefix('Описание персонажа\n')
+        return self.soup.find('div', class_='character__desc').getText().strip().removeprefix('Описание персонажа\n').strip()
 
     # Fetch the character's anime list
     def anime_list(self):
